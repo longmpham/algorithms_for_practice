@@ -64,9 +64,7 @@ def remove_duplicates_in_place_v2(nums):
     for element in nums:
         if element > nums[index]:
             index += 1
-            nums[index] = element
-            print('helpme')
-    
+            nums[index] = element    
 
     return nums[0:index+1]
 
