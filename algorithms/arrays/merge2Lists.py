@@ -49,6 +49,7 @@ class ListNode:
         print(x)
 
 # from leet code, they use overrided ops and stuff...
+# also linked lists dont work for me... so.
 def mergeTwoLinkedLists(l1, l2):
         # create new linkedlist to merge 2 linkedlists
         new_list = ListNode(0)
