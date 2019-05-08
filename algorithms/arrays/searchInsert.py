@@ -53,23 +53,33 @@ def searchInsert_v2(nums, target):
 
 def searchInsert_v3_recursive(nums, target):
 	
-	# DOES NOT WORK CURRENTLY.
+	
+	index = 0
+
+	# DOES NOT WORK CURRENTLY. Only returns if found.
 	half = int(len(nums)/2)
+	# print('length of array:', len(nums), 'half:', half)
+	print('array:', nums, 'half:', half, 'target:', target)
+
+	# print(nums[half] == target)
 
 	if nums[half] == target:
+		print('found target')
 		return half
 	elif target < nums[half]:
-		searchInsert_v3_recursive(nums[0:half], target)
-	else:
-		searchInsert_v3_recursive(nums[half:len(nums)+1], target)
-
-	return 'none found'
-
-
+		# print('lower')
+		index = searchInsert_v3_recursive(nums[0:half], target)
+	elif target > nums[half]:
+		# print('higher')
+		index = searchInsert_v3_recursive(nums[half:len(nums)], target)
 
 
-array = [1,3,5,6]
-target = 6
+
+
+array = [1,3,5,6,7]
+target = 7
 #print(searchInsert(array, target)) 
 
-print(searchInsert_v2(array, target)) 
+# print(searchInsert_v2(array, target)) 
+
+print(searchInsert_v3_recursive(array, target)) 
