@@ -114,7 +114,6 @@ class LinkedList:
 		print('no key:', str(key), 'found')
 		return 
 
-	
 	def printList(self):
 
 		current_pointer = self.head
@@ -138,6 +137,46 @@ class LinkedList:
 
 		print(string)
 
+	def get(self, key):
+
+		current_pointer = self.head
+
+		while current_pointer.next is not None:
+			if current_pointer.value == key:
+				print('Found:', key)
+				return True
+			else:
+				current_pointer = current_pointer.next
+				if current_pointer.next == None:
+					if current_pointer.value == key:
+						print('Found:', key)
+						return True
+
+		print('Could not find:', key)
+		return False
+
+	def size(self):
+
+		current_pointer = self.head
+		size = 0
+
+		# check base case (0th index)
+		if current_pointer.next is None:
+			if current_pointer.value is None:
+				size = 0
+				return size
+
+		size = 1
+		# otherwise, numbers do exist.
+		while current_pointer.next is not None:
+			size += 1
+			current_pointer = current_pointer.next
+
+		print('size:', size)
+		return size
+
+
+
 def main():
 
 	# create a linked list!
@@ -150,40 +189,45 @@ def main():
 	My_Linked_List.addNode(4)
 	My_Linked_List.printList()
 
-	#Try Deleting!
-	print('\ndeleting now')
-	My_Linked_List.deleteNode(1)
-	My_Linked_List.printList()
-	My_Linked_List.deleteNode(6)
-	My_Linked_List.printList()
-	My_Linked_List.deleteNode(3)
-	My_Linked_List.printList()
-	My_Linked_List.deleteNode(4)
-	My_Linked_List.printList()
-	My_Linked_List.deleteNode(2)
-	My_Linked_List.printList()
-	print('\nim done')
+	My_Linked_List.get(4)
+	My_Linked_List.get(6)
 
-	My_Linked_List.printList()
-	My_Linked_List.addNode(1)
-	My_Linked_List.addNode(2)
-	My_Linked_List.addNode(3)
-	My_Linked_List.addNode(4)
-	My_Linked_List.printList()
+	My_Linked_List.size()
 
-	# pop it now.
+	# #Try Deleting!
+	# print('\ndeleting now')
+	# My_Linked_List.deleteNode(1)
+	# My_Linked_List.printList()
+	# My_Linked_List.deleteNode(6)
+	# My_Linked_List.printList()
+	# My_Linked_List.deleteNode(3)
+	# My_Linked_List.printList()
+	# My_Linked_List.deleteNode(4)
+	# My_Linked_List.printList()
+	# My_Linked_List.deleteNode(2)
+	# My_Linked_List.printList()
+	# print('\nim done')
 
-	My_Linked_List.pop()
-	My_Linked_List.printList()
+	# My_Linked_List.printList()
+	# My_Linked_List.addNode(1)
+	# My_Linked_List.addNode(2)
+	# My_Linked_List.addNode(3)
+	# My_Linked_List.addNode(4)
+	# My_Linked_List.printList()
 
-	My_Linked_List.pop()
-	My_Linked_List.printList()
+	# # pop it now.
 
-	My_Linked_List.pop()
-	My_Linked_List.printList()
+	# My_Linked_List.pop()
+	# My_Linked_List.printList()
 
-	My_Linked_List.pop()
-	My_Linked_List.printList()
+	# My_Linked_List.pop()
+	# My_Linked_List.printList()
+
+	# My_Linked_List.pop()
+	# My_Linked_List.printList()
+
+	# My_Linked_List.pop()
+	# My_Linked_List.printList()
 
 
 
