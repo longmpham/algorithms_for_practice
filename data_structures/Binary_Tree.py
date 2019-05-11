@@ -64,6 +64,22 @@ class Binary_Tree:
 			print(str(current_node.value))
 			self._print_tree(current_node.right_node)
 
+	def tree_height(self):
+		if self.root is not None:
+			height = 0
+			self._tree_height(self.root, height)
+		else:
+			print('empty tree')
+
+	def _tree_height(self, current_node, height):
+		if current_node is not None:
+			height += 1
+			self._tree_height(current_node.left_node, height)
+			self._tree_height(current_node.right_node, height)
+
+
+
+
 
 def main():
 
