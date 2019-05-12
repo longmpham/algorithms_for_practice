@@ -89,11 +89,15 @@ def compare_strings_v2(str1, str2, my_tolerance):
 			index_lower += 1
 
 		else:
+
+
 			# check if next letter in str1 is the same
-			j = 1
-			while j <= tolerance:
+			tol_count = 1
+			while tol_count <= tolerance and tol_count <= len(higher) - len(lower):
+				print('tol_count', tol_count)
 				if len(lower) != len(higher):
-					if lower[index_lower] == higher[index_higher + j]:
+					print('lowerindexval:', lower[index_lower], 'higherval', higher[index_higher])
+					if lower[index_lower] == higher[index_higher + tol_count]:
 						# there was a match in the search
 						unmatches -= 1
 						break
@@ -105,8 +109,9 @@ def compare_strings_v2(str1, str2, my_tolerance):
 					# print('unmatches:', unmatches)
 
 				print('unmatches:', unmatches)
-				j += 1
+				tol_count += 1
 
+			# end of comparison, increment and go next!
 			index_higher += 1
 			index_lower += 1
 			unmatches += 1
@@ -128,11 +133,9 @@ def compare_strings_v2(str1, str2, my_tolerance):
 		return False
 
 
-
-
-str1 = 'ABC'
-str2 = 'ABC'
-tolerance = 0
+str1 = 'AB'
+str2 = 'AC'
+tolerance = 1
 
 
 print(compare_strings_v2(str1, str2, tolerance))
