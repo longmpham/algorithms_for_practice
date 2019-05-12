@@ -95,14 +95,30 @@ def find_missing_optimal(arr1, arr2):
 		return arr1[len(arr2)]
 
 
+def find_missing_best_solution(arr1, arr2):
+
+	# only works if one array has 1 different number
+
+	# using XOR as a natural comaprator!
+	XOR_sum = 0
+
+	for num1 in arr1:
+		XOR_sum ^= num1
+
+	for num2 in arr2:
+		XOR_sum ^= num2
+
+	if XOR_sum == 0:
+		return 'both arrays are the same'
+	return XOR_sum
 
 
-arr1 = [2,3,4,1,5,6,8]
-arr2 = [1,2,6,3,4,5,8,9]
+arr1 = [2,3,4,1,5,6,7,9]
+arr2 = [1,2,6,3,4,5,7,9,8]
 
 # print(find_missing_brute_force(arr1,arr2))
 
-print(find_missing_optimal(arr1,arr2))
+print(find_missing_best_solution(arr1,arr2))
 
 
 
