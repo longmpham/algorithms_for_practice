@@ -16,7 +16,7 @@
 
 
 
-
+# doesnt work
 def compare_strings(str1, str2, my_tolerance):
 
 	# see if strings are empty.
@@ -56,7 +56,7 @@ def compare_strings(str1, str2, my_tolerance):
 
 	return True
 
-
+# doesnt work
 def compare_strings_v2(str1, str2, my_tolerance):
 
 	# see if strings are empty.
@@ -132,6 +132,10 @@ def compare_strings_v2(str1, str2, my_tolerance):
 	else:
 		return False
 
+def compare_strings_v3(str1, str2, my_tolerance):
+
+	
+	
 
 str1 = 'AB'
 str2 = 'AC'
