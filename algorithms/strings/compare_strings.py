@@ -11,7 +11,6 @@
 
 	Case 3: strings are off by N
 
-
 """
 
 
@@ -134,13 +133,77 @@ def compare_strings_v2(str1, str2, my_tolerance):
 
 def compare_strings_v3(str1, str2, my_tolerance):
 
-	
-	
+	# base conditions:
+	if str1 == '' and str2 == '':
+		return True
+	if str1 == '':
+		return False
+	if str2 == '':
+		return False
 
-str1 = 'AB'
-str2 = 'AC'
-tolerance = 1
+
+	# force make str2 always shorter
+	if str1 < str2:
+		temp = str1
+		str1 = str2
+		str2 = temp
+
+	# recall:
+	# str 1 = longer / equal
+	# str 2 = shorter / equal
+
+	# alg: we check that each letter is the same. when its not hte same we return false.
+	str1_index = 0
+	str2_index = 0
+	mismatches = 0
+	tolerance = my_tolerance
+
+	# serch until the end of str2 because its shorter.
+	while str2_index < len(str2):
+
+		# check if the letters are the same as the base.
+		if str1[str1_index] == str2[str2_index]:
+			str1_index += 1
+			str2_index += 1
+
+		# if they are not the same we have to do a couple of things. 
+		# first, if there is no tolerance we return false. 
+		# if there is a tolerance, check how many errors we have
+		elif mismatches == tolerance:
+			return False
+
+		# if we're under our tolerance, search the next (couple of) letters
+		else:
+			str1_index += 1
+			tol_counter = 0
+			while tol_counter < tolerance and (str1_index+tol_counter) < len(str1):
+				if str1[str1_index + tol_counter] == str2[str2_index]:
+					print('found next match')
+					str1_index += tol_counter
+				else:
+					mismatches += 1
+					tol_counter += 1
+
+				if mismatches == tolerance:
+					return False
+
+			str2_index += 1
 
 
-print(compare_strings_v2(str1, str2, tolerance))
+	# case: all letters match until the end of str2, check tolerance
+	if mismatches == tolerance and tolerance > 0:
+		return False
+	if len(str1) - len(str2) > tolerance:
+		return False
+
+
+	return True
+
+
+str1 = 'ABC'
+str2 = 'C'
+tolerance = 2
+
+
+print(compare_strings_v3(str1, str2, tolerance))
 		
