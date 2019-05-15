@@ -27,7 +27,7 @@ def sum_of_bst(root, new_sum):
 			new_sum = sum_of_bst(root.left, new_sum)
 			# print(new_sum)
 
-		elif root.right is not None:
+		if root.right is not None:
 			# add the right
 			new_sum = sum_of_bst(root.right, new_sum)
 			# print(new_sum)
@@ -37,6 +37,12 @@ def sum_of_bst(root, new_sum):
 
 
 if __name__ == '__main__': 
+	"""
+				1
+			2		3	
+		4	5		
+
+	"""
 
 
 	root1 = Tree_Node(1)  
