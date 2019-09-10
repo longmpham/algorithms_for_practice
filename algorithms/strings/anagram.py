@@ -28,7 +28,7 @@ def isAnagram_v2(str1, str2):
 
 	print(seen)
 
-	# find a way to check if keys are equal to zero!
+	# if keys are equal to zero!
 	check = all(value == 0 for value in seen.values())
 
 	return check
