@@ -2,10 +2,13 @@
 	Implement a basic Trie (Tree that holds chars to search for words)
 """
 
+from collections import defaultdict
 
+
+# this works
 class TrieNode:
 	def __init__(self):
-		self.children = {}
+		self.children = defaultdict()
 
 
 class TrieWithNodes:
