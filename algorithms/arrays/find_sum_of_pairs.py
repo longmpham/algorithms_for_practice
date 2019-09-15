@@ -15,7 +15,7 @@ def sum_of_pairs(array, sum):
 
 		# if the compliment is not seen, add the index value in the seen numbers list
 		if compliment not in seen:
-			seen[array[i]] = i
+			seen[array[i]] = i+
 			i +=1
 		else:
 			return [min(i, seen[compliment]), max(i, seen[compliment])]

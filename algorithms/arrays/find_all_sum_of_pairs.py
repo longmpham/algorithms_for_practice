@@ -22,7 +22,7 @@ def find_all_sum_of_pairs(array, sum):
 			ans.append((min(i, seen_list[compliment]), max(i, seen_list[compliment])))
 		i += 1
 
-	# sort our return list by the first index in ascending order!	
+	# sort our return list by the first index in ascending order! Need more time to understand lambdas.
 	ans = sorted(ans, key=lambda x: x[0])
 	return ans
 

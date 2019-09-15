@@ -12,7 +12,7 @@ def remove_element(nums, value):
             del nums[index]
         index+=1
 
-    print(nums)
+    return nums
 
 
 

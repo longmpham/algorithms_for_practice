@@ -3,6 +3,7 @@
 	ie. list = [1,2,3,4,5,6,7,8,9,10]       sum = 6   ans = [1,2,3]
 """
 
+# leetcode... =/ hard one.
 def triplet_sum(numbers, sum):
 	
 	# helper variables

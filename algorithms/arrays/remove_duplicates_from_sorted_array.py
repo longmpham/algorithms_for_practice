@@ -55,6 +55,7 @@ def remove_duplicates_in_place(array):
 
 	print(new_list)
 
+# leetcode way
 def remove_duplicates_in_place_v2(nums):
 
     if not nums:
