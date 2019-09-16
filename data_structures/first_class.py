@@ -5,6 +5,7 @@
 
 class Person:
 
+	# python requires 'self' as the object.
 	def __init__(self, name, age, phrase):
 		self.name = name
 		self.age = age

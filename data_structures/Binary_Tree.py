@@ -58,11 +58,23 @@ class Binary_Tree:
 			print('empty tree')
 
 	def _print_tree(self, current_node):
-		if current_node is not None:
-			# print all left nodes first. if no left, print right.
-			self._print_tree(current_node.left_node)
-			print(str(current_node.value))
-			self._print_tree(current_node.right_node)
+		# check if node has a value. if so get ready to print it. :)
+		if (cur_node is not None):
+
+			#inorder (left, print, right)
+			self._print(cur_node.left)
+			print(cur_node.value)
+			self._print(cur_node.right)
+
+			# #postorder (left, right, print)
+			# self._print(cur_node.left)
+			# self._print(cur_node.right)
+			# print(cur_node.value)
+
+			# # preorder
+			# print(cur_node.value)
+			# self._print(cur_node.left)
+			# self._print(cur_node.right)
 
 	def tree_height(self):
 		if self.root is not None:

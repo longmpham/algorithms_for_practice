@@ -1,3 +1,0 @@
-"""
-	THE BFS GRAPH
-"""
