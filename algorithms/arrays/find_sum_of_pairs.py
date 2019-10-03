@@ -15,7 +15,8 @@ def sum_of_pairs(array, sum):
 
 		# if the compliment is not seen, add the index value in the seen numbers list
 		if compliment not in seen:
-			seen[array[i]] = i+
+			print('compliment: ', compliment, 'number: ', array[i], 'i: ', i)
+			seen[array[i]] = i
 			i +=1
 		else:
 			return [min(i, seen[compliment]), max(i, seen[compliment])]
@@ -26,5 +27,6 @@ def sum_of_pairs(array, sum):
 array1 = [1,2,3,4,5]
 array2 = [2,3,1,6,7]
 array3 = [1,5,2,9,10]
+array4 = [5,4,3,2,1]
 
-print(sum_of_pairs(array3, 3))
+print(sum_of_pairs(array4, 3))

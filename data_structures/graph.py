@@ -1,15 +1,3 @@
-"""
-	the logic is as follows:
-	1. in each graph, whereever you start, you can assume its connected to other nodes
-	2. identify nodes as unmarked (or newly found or whatever)
-	3. use your first node to begin finding neighbors and enqueue them.
-	4. pop the first node in the queue and use that to find neighbors and add them to the queue.
-	5. repeat
-
-
-
-
-"""
 from collections import defaultdict
 
 class Graph:
@@ -21,6 +9,14 @@ class Graph:
 	def addEdge(self, u, v):
 		self.graph[u].append(v)
 
+	'''	
+		the logic is as follows for BFS:
+		1. in each graph, whereever you start, you can assume its connected to other nodes
+		2. identify nodes as unmarked (or newly found or whatever)
+		3. use your first node to begin finding neighbors and enqueue them.
+		4. pop the first node in the queue and use that to find neighbors and add them to the queue.
+		5. repeat
+	'''
 	def BFS(self, startNode):
 
 		# identify all nodes to be unmarked/unread
@@ -37,7 +33,6 @@ class Graph:
 
 		# start the enqueuing 
 		while queue:
-
 			# pop the first element in the queue
 			cur_node = queue.pop(0)
 
@@ -46,6 +41,7 @@ class Graph:
 
 			# find neighbors
 			for i in self.graph[cur_node]:
+				# print(queue)
 
 				# if node was unvisited, we queue and mark it as visited.
 				if visitedNodes[i] == False:
@@ -56,15 +52,23 @@ class Graph:
 				else:
 					print('node ', i, ' has been visited')
 
+
+	'''
+		the logic for DFS is as follows:
+		1. mark all nodes as unvisted (false)
+		2. call helper function to begin searching at a node (use call stack)
+		3. mark searched node as true
+		4. search that node for it's <first> neighbors and search that node (call function/stack)
+		5. repeat.
+
+	'''
 	def DFS(self, startNode):
 
 		# create an array of unvisited nodes in the graph
 		visitedNodes = [False] * (len(self.graph))
 
 		# go down deep as far as you can!
-
 		self._DFS(startNode, visitedNodes)
-
 
 	def _DFS(self, node, visitedNodes):
 
@@ -93,16 +97,17 @@ class Graph:
 g = Graph() 
 g.addEdge(0, 1) 
 g.addEdge(0, 2) 
-g.addEdge(1, 2) 
+g.addEdge(1, 2)
+g.addEdge(1, 5) 
 g.addEdge(2, 0) 
 g.addEdge(2, 3) 
 g.addEdge(3, 3)
-g.addEdge(4, 1)
-g.addEdge(5, 2)
-g.addEdge(5, 3)
-g.addEdge(6, 4)
-g.addEdge(6, 5)
-g.addEdge(0, 5)
+g.addEdge(1, 4)
+g.addEdge(4, 4)
+g.addEdge(5, 5)
+# g.addEdge(4, 5)
+# g.addEdge(5, 3)
+# g.addEdge(0, 5)
 
 g.printGraph()
 start = 2
@@ -111,3 +116,10 @@ g.BFS(start)
 
 print('\n\n ______________________')
 g.DFS(start)
+
+# good visual of BFS
+# https://www.tutorialspoint.com/data_structures_algorithms/breadth_first_traversal.htm
+
+
+# good visual of DFS
+# https://www.tutorialspoint.com/data_structures_algorithms/depth_first_traversal.htm
