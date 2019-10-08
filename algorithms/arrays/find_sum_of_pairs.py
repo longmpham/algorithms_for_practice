@@ -19,9 +19,10 @@ def sum_of_pairs(array, sum):
 			seen[array[i]] = i
 			i +=1
 		else:
+			# return the index of the pairs ([low num, high num])
 			return [min(i, seen[compliment]), max(i, seen[compliment])]
 
-	return false
+	return False
 
 # test cases
 array1 = [1,2,3,4,5]
