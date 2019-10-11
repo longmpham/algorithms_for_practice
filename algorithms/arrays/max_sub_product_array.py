@@ -12,6 +12,7 @@ def max_sub_product_array(arr):
             if product > max:
                 max = product
     return max
+    
 
 array = [2,3,4,6]
 print(max_sub_product_array(array))
