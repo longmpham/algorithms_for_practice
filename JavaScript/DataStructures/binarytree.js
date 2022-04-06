@@ -12,7 +12,6 @@ class BinarySearchTree {
   // remove
   // printDFS
   // printBFS
-  // insert
 
   constructor() {
     this.root = null
