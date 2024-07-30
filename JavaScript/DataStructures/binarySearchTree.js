@@ -51,16 +51,22 @@ class BinarySearchTree {
       console.log('value in tree already')
     }
   }
+
+
 }
 
 
 let myBST = new BinarySearchTree()
+myBST.add(5)
 myBST.add(3)
 myBST.add(2)
 myBST.add(4)
 myBST.add(1)
-myBST.add(5)
-myBST.add(5)
+myBST.add(6)
+myBST.add(8)
+myBST.add(9)
+myBST.add(7)
+myBST.add(10)
 
 console.log(myBST)
 

@@ -15,6 +15,8 @@ function palindrome1(str) {
 }
 
 
-
+str = "1001"
+str = "racecar"
+str = "10101"
 const output = palindrome1("1001")
 console.log(output)
