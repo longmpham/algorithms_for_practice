@@ -1,6 +1,6 @@
 """
 	Create a palindrome checker.
-	ie. string = Dog  palindrome = God
+	ie. string = racecar
 """
 
 
