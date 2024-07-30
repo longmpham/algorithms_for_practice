@@ -38,6 +38,25 @@ class LinkedList:
         # reset the head to the new node
         self.head = current_node
         
+    def insert(self, value, index):
+        new_node = Node(value)
+        list_index = 0
+        current_node = self.head
+        # there are 2 scenarios: if the list length cannot accept the value or we just insert it. I will take the former.
+        
+        while list_index != index-1 and current_node.next is not None:
+            list_index += 1
+            current_node = current_node.next
+        if list_index != index-1 and current_node.next == None:
+            print(f"Cannot insert {value} at index: {index}")
+            return
+        # exit the while loop -> current_node is at the index we need
+        # current -> new_node -> next_node
+        new_node.next = current_node.next
+        current_node.next = new_node
+        print(f"Inserted {value} at index: {list_index}")
+        return
+            
         
     def display(self):
         if self.head == None:
@@ -87,3 +106,9 @@ myLL.search(8)
 myLL.append(4)
 myLL.display()
 myLL.search(4)
+myLL.prepend(0)
+myLL.prepend(9)
+myLL.prepend(5)
+myLL.display()
+myLL.insert(4,3)
+myLL.display()
