@@ -19,13 +19,14 @@ def draw_board(spaces):
 def get_user_input(spaces):
 
     while True:
-        user_input = int(input("Enter 1-9 (top left to bottom right): ")) - 1
         symbol = 'X'
-        if spaces[user_input] != " ":  
-            print("Space taken!")
-        else:
-            spaces[user_input] = 'X'
-            break
+        user_input = int(input("Enter 1-9 (top left to bottom right): ")) - 1
+        if user_input >= 0 and user_input <= 8:
+            if spaces[user_input] != " ":  
+                print("Space taken!")
+            else:
+                spaces[user_input] = 'X'
+                break
 
     return spaces
 
@@ -65,6 +66,7 @@ def check_draw(spaces):
     for space in spaces:
         if space == " ":
             return False
+    print("It's a draw!")
     return True
 
 def main():
