@@ -60,7 +60,7 @@ class LinkedList:
         
     def display(self):
         if self.head == None:
-            print("nothing to show")
+            print("nothing to print")
             return
         
         current_node = self.head

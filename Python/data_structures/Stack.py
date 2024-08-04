@@ -28,7 +28,7 @@ class Stack:
 	def getStack(self):
 		return self.items
 
-	def sort
+	# def sort
 
 
 
