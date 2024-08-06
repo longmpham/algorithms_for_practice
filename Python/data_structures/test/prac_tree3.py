@@ -50,10 +50,7 @@ class BTreeWhile:
             self.print_pre_order(node.right)
             
     def print_tree(self):
-        
-                
-        
-        
+    
         if self.root == None:
             print("empty tree")
             return

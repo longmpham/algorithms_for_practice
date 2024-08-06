@@ -61,7 +61,6 @@ class BTree:
             # self._print_tree(current_node.left)
             # self._print_tree(current_node.right)
 
-
 mytree = BTree()
 mytree.print_tree()
 
